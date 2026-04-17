@@ -41,7 +41,7 @@ const HeroSection = () => {
 
           <div className="mb-16 flex flex-col gap-4 sm:flex-row">
             <Button asChild size="lg" className="px-8 text-base font-semibold">
-              <Link href="/create-event">
+              <Link href="/organizer-registration">
                 Create Your Event
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>

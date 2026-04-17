@@ -6,7 +6,7 @@ import PricingSection from "@/components/PricingSection";
 import MilestonesSection from "@/components/MilestonesSection";
 import PartnersSection from "@/components/PartnersSection";
 import CTASection from "@/components/CTASection";
-import Footer from "@/components/Footer";
+import Footer from "../components/Footer";
 
 const Index = () => {
   return (

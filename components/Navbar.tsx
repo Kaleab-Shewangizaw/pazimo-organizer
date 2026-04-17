@@ -35,7 +35,7 @@ const Navbar = () => {
             About
           </a>
           <Button asChild size="sm" className="font-semibold">
-            <Link href="/create-event">Get Started</Link>
+            <Link href="/organizer-registration">Get Started</Link>
           </Button>
         </div>
 
