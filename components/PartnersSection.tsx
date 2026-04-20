@@ -1,39 +1,75 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
-const partners = ["Eventbrite", "Stripe", "Mailchimp", "Spotify", "Live Nation", "Ticketmaster"];
+const partners = [
+  { name: "Partner 1", logo: "/IMG_9715.PNG" },
+  { name: "Partner 2", logo: "/IMG_9716.PNG" },
+  { name: "Partner 3", logo: "/IMG_9717.PNG" },
+  { name: "Partner 4", logo: "/IMG_9718.PNG" },
+  { name: "Partner 5", logo: "/IMG_9719.PNG" },
+  { name: "Partner 6", logo: "/IMG_9720.PNG" },
+  { name: "Partner 7", logo: "/IMG_9721.PNG" },
+  { name: "Partner 8", logo: "/IMG_9722.PNG" },
+  { name: "Partner 9", logo: "/IMG_9723.PNG" },
+  { name: "Partner 10", logo: "/IMG_9724.PNG" },
+  { name: "Partner 11", logo: "/IMG_9725.PNG" },
+  { name: "Partner 12", logo: "/IMG_9726.PNG" },
+];
+
+// Duplicate partners for seamless looping
+const duplicatedPartners = [...partners, ...partners];
 
 const PartnersSection = () => {
   return (
-    <section className="border-y border-border bg-[hsl(var(--surface))] py-20">
+    <section className="relative overflow-hidden border-y border-border bg-[hsl(var(--surface))] py-20">
       <div className="container mx-auto px-4">
         <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-10 text-center text-sm uppercase tracking-widest text-muted-foreground"
+          className="mb-12 text-center text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground/60"
         >
           Trusted By Industry Leaders
         </motion.p>
+      </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
-          {partners.map((name, i) => (
-            <motion.div
-              key={name}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="cursor-default select-none text-xl font-display font-bold text-muted-foreground/40 transition-colors hover:text-muted-foreground/70 md:text-2xl"
+      <div className="relative flex overflow-hidden">
+        {/* Gradients to fade edges */}
+        <div className="pointer-events-none absolute left-0 z-10 h-full w-20 bg-gradient-to-r from-[hsl(var(--surface))] to-transparent md:w-40" />
+        <div className="pointer-events-none absolute right-0 z-10 h-full w-20 bg-gradient-to-l from-[hsl(var(--surface))] to-transparent md:w-40" />
+
+        <motion.div
+          className="flex gap-12 md:gap-24"
+          animate={{
+            x: ["0%", "-50%"],
+          }}
+          transition={{
+            duration: 30,
+            ease: "linear",
+            repeat: Infinity,
+          }}
+        >
+          {duplicatedPartners.map((partner, i) => (
+            <div
+              key={`${partner.name}-${i}`}
+              className="flex w-32 items-center justify-center grayscale transition-all duration-300 hover:grayscale-0 md:w-48"
             >
-              {name}
-            </motion.div>
+              <Image
+                src={partner.logo}
+                alt={partner.name}
+                width={200}
+                height={80}
+                className="h-auto w-full object-contain opacity-50 transition-opacity hover:opacity-100"
+              />
+            </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 };
 
 export default PartnersSection;
+
