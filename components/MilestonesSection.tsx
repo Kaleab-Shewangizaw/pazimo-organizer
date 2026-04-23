@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const milestones = [
-  { value: 250000, suffix: "+", label: "Tickets Sold" },
-  { value: 1200, suffix: "+", label: "Event Organizers" },
-  { value: 3500, suffix: "+", label: "Events Hosted" },
-  { value: 98, suffix: "%", label: "Satisfaction Rate" },
+  { value: 25000, suffix: "+", label: "Tickets Sold" },
+  { value: 40, suffix: "+", label: "Event Organizers" },
+  { value: 100, suffix: "+", label: "Events Managed" },
+  { value: 100, suffix: "%", label: "Satisfaction Rate" },
 ];
 
 function useCountUp(target: number, inView: boolean) {

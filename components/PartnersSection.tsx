@@ -54,14 +54,14 @@ const PartnersSection = () => {
           {duplicatedPartners.map((partner, i) => (
             <div
               key={`${partner.name}-${i}`}
-              className="flex w-32 items-center justify-center grayscale transition-all duration-300 hover:grayscale-0 md:w-48"
+              className="flex w-20 items-center justify-center transition-all duration-300 md:w-28"
             >
               <Image
                 src={partner.logo}
                 alt={partner.name}
-                width={200}
-                height={80}
-                className="h-auto w-full object-contain opacity-50 transition-opacity hover:opacity-100"
+                width={120}
+                height={60}
+                className="h-auto w-full object-contain transition-opacity"
               />
             </div>
           ))}
