@@ -7,11 +7,11 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden">
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-primary/90">
       <div className="absolute inset-0">
         <img src="/images/hero-event.jpg" alt="Event atmosphere" className="h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-primary/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-primary/30" />
       </div>
 
       <div className="container relative z-10 mx-auto px-4 py-32">
@@ -28,13 +28,13 @@ const HeroSection = () => {
             </span>
           </div>
 
-          <h1 className="mb-6 text-5xl font-display font-bold leading-[1.05] text-foreground md:text-7xl">
+          <h1 className="mb-6 text-5xl font-display font-bold leading-[1.05] text-white md:text-7xl">
             Your Events, <span className="text-gradient-gold">Perfected</span>
             <br />
             With Pazimo.
           </h1>
 
-          <p className="mb-10 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+          <p className="mb-10 max-w-xl text-lg leading-relaxed text-white/80 md:text-xl">
             From intimate corporate gatherings to massive festivals - our flexible platform handles ticketing,
             invitations, and everything in between.
           </p>
@@ -67,7 +67,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="flex items-center gap-2 text-sm text-muted-foreground"
+                className="flex items-center gap-2 text-sm text-white/80"
               >
                 <Icon className="h-4 w-4 text-accent" />
                 <span>{label}</span>
